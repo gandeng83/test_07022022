@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Cron Job Laravel at Nice090222
+    </title>
+    <style>:root{--border-radius:5px;--box-shadow:2px 2px 10px;--color:#118bee;--color-accent:#118bee15;--color-bg:#fff;--color-bg-secondary:#e9e9e9;--color-secondary:#0645AD;--color-secondary-accent:#920de90b;--color-shadow:#f4f4f4;--color-text:#000;--color-text-secondary:#999;--font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;--hover-brightness:1.2;--justify-important:center;--justify-normal:left;--line-height:1.5;--width-card:285px;--width-card-medium:460px;--width-card-wide:800px;--width-content:1080px}article aside{background:var(--color-secondary-accent);border-left:4px solid var(--color-secondary);padding:.01rem .8rem}body{background:var(--color-bg);color:var(--color-text);font-family:var(--font-family);line-height:var(--line-height);margin:0;overflow-x:hidden;padding:1rem 0}footer,header,main{margin:0 auto;max-width:var(--width-content);padding:0rem 1rem}hr{background-color:var(--color-bg-secondary);border:none;height:1px;margin:4rem 0}section{display:flex;flex-wrap:wrap;justify-content:var(--justify-important)}section aside{border:1px solid var(--color-bg-secondary);border-radius:var(--border-radius);box-shadow:var(--box-shadow) var(--color-shadow);margin:1rem;padding:1.25rem;width:var(--width-card)}section aside:hover{box-shadow:var(--box-shadow) var(--color-bg-secondary)}section aside img{max-width:100%}[hidden]{display:none}article header,div header,main header{padding-top:0}header{text-align:var(--justify-important)}header a b,header a em,header a i,header a strong{margin-left:.5rem;margin-right:.5rem}header nav img{margin:1rem 0}section header{padding-top:0;width:100%}nav{align-items:center;display:flex;font-weight:700;justify-content:space-between;margin-bottom:7rem}nav ul{list-style:none;padding:0}nav ul li{display:inline-block;margin:0 .5rem;position:relative;text-align:left}nav ul li:hover ul{display:block}nav ul li ul{background:var(--color-bg);border:1px solid var(--color-bg-secondary);border-radius:var(--border-radius);box-shadow:var(--box-shadow) var(--color-shadow);display:none;height:auto;left:-2px;padding:.5rem 1rem;position:absolute;top:1.7rem;white-space:nowrap;width:auto}nav ul li ul li,nav ul li ul li a{display:block}code,samp{background-color:var(--color-accent);border-radius:var(--border-radius);color:var(--color-text);display:inline-block;margin:0 .1rem;padding:0 .5rem}details{margin:1.3rem 0}details summary{font-weight:700;cursor:pointer}h1,h2,h3,h4,h5,h6{line-height:var(--line-height)}mark{padding:.1rem}ol li,ul li{padding:.2rem 0}p{margin:.75rem 0;padding:0}pre{margin:1rem 0;max-width:var(--width-card-wide);padding:1rem 0}pre code,pre samp{display:block;max-width:var(--width-card-wide);padding:.5rem 2rem;white-space:pre-wrap}small{color:var(--color-text-secondary)}sup{background-color:var(--color-secondary);border-radius:var(--border-radius);color:var(--color-bg);font-size:xx-small;font-weight:700;margin:.2rem;padding:.2rem .3rem;position:relative;top:-2px}a{color:var(--color-secondary);display:inline-block;text-decoration:none}a:hover{filter:brightness(var(--hover-brightness));text-decoration:underline}a b,a em,a i,a strong,button{border-radius:var(--border-radius);display:inline-block;font-size:medium;font-weight:700;line-height:var(--line-height);margin:.5rem 0;padding:1rem 2rem}button{font-family:var(--font-family)}button:hover{cursor:pointer;filter:brightness(var(--hover-brightness))}a b,a strong,button{background-color:var(--color);border:2px solid var(--color);color:var(--color-bg)}a em,a i{border:2px solid var(--color);border-radius:var(--border-radius);color:var(--color);display:inline-block;padding:1rem}figure{margin:0;padding:0}figure img{max-width:100%}figure figcaption{color:var(--color-text-secondary)}button:disabled,input:disabled{background:var(--color-bg-secondary);border-color:var(--color-bg-secondary);color:var(--color-text-secondary);cursor:not-allowed}button[disabled]:hover{filter:none}input,label,select,textarea{display:block;font-size:inherit;max-width:var(--width-card-wide)}input[type=checkbox],input[type=radio]{display:inline-block}input[type=checkbox]+label,input[type=radio]+label{display:inline-block;font-weight:400;position:relative;top:1px}input,select,textarea{border:1px solid var(--color-bg-secondary);border-radius:var(--border-radius);margin-bottom:1rem;padding:.4rem .8rem}input[readonly],textarea[readonly]{background-color:var(--color-bg-secondary)}label{font-weight:700;margin-bottom:.2rem}table{border:1px solid var(--color-bg-secondary);border-radius:var(--border-radius);border-spacing:0;display:inline-block;max-width:100%;overflow-x:auto;padding:0;white-space:nowrap}table td,table th,table tr{padding:.4rem .8rem;text-align:var(--justify-important)}table thead{background-color:var(--color);border-collapse:collapse;border-radius:var(--border-radius);color:var(--color-bg);margin:0;padding:0}table thead th:first-child{border-top-left-radius:var(--border-radius)}table thead th:last-child{border-top-right-radius:var(--border-radius)}table thead th:first-child,table tr td:first-child{text-align:var(--justify-normal)}table tr:nth-child(even){background-color:var(--color-accent)}blockquote{display:block;font-size:x-large;line-height:var(--line-height);margin:1rem auto;max-width:var(--width-card-medium);padding:1.5rem 1rem;text-align:var(--justify-important)}blockquote footer{color:var(--color-text-secondary);display:block;font-size:small;line-height:var(--line-height);padding:1.5rem 0} article{padding: 1.25rem;}.v-cover{height: auto;max-height: 480px; object-fit: cover;width: 100%;cursor: pointer;}.v-image{height: 250px; object-fit: cover;width: 100vw;cursor: pointer;}.dwn-cover{max-height: 460px; object-fit: cover;}.w-100{width: 100vw}.search-box{color:#333;background-color:#f5f5f5;width:85%;height:50px;padding:0 20px;border:none;border-radius:20px;outline:0;border:1px solid #002cd92e}.search-box:active,.search-box:focus,.search-box:hover{border:1px solid #d9008e}.btn{display:inline-block;font-weight:400;color:#212529;text-align:center;vertical-align:middle;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-color:transparent;border:1px solid transparent;border-top-color:transparent;border-right-color:transparent;border-bottom-color:transparent;border-left-color:transparent;padding:.375rem .75rem;margin:0.5rem;font-size:1rem;line-height:1.5;border-radius:.25rem;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out}.btn-danger{color:#fff;background-color:#dc3545;border-color:#dc3545}.btn-success{color:#fff;background-color:#28a745;border-color:#28a745}.btn-group-sm>.btn,.btn-sm{padding:.25rem .5rem;font-size:.875rem;line-height:1.5;border-radius:.2rem}.hide{display:none;visibility:hidden}.popbox{position:fixed;top:0;left:0;bottom:0;width:100%;z-index:1000000}.pop-content{display:block;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;box-shadow:0 3px 20px 0 rgba(0,0,0,.5)}.popcontent{padding:20px;background:#fff;border-radius:5px;overflow:hidden}.pop-overlay{position:absolute;top:0;left:0;bottom:0;width:100%;z-index:1;background:rgb(255 255 255 / 93%)}.popbox-close-button{position:absolute;width:28px;height:28px;line-height:28px;text-align:center;top:-14px;right:-14px;color:#c82333;background-color:#fff;box-shadow:0 -1px 1px 0 rgba(0,0,0,.2);border:none;border-radius:50%;cursor:pointer;font-size:28px;font-weight:700;padding:0}.popcontent img{width:100%;height:100%;display:block}.flowbox{position:relative;overflow:hidden}@media  screen and (max-width:840px){.pop-content{width:90%;height:auto;top:20%}.popcontent img{height:auto}}
+</style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org/", 
+  "@type": "Article", 
+  "author": {
+    "@type": "Person",
+    "name": "James"
+  },
+  "headline": "Cron Job Laravel",
+  "datePublished": "2022-02-02T15:12:39Z",
+  "image": "https://www.nicesnippets.com/upload/blog/1602738412_cron-job-min.png",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jobs Tips and References",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://via.placeholder.com/512.png?text=cron%20job%20laravel",
+      "width": 512,
+      "height": 512
+    }
+  }
+}
+</script>
+<link rel="preconnect" href="https://i.pinimg.com">
+<link rel="dns-prefetch" href="https://i.pinimg.com">
+<link rel="preload" href="https://i.ytimg.com/vi/_NoWp58pHa4/maxresdefault.jpg" as="image" media="(max-width: 420px)">
+<link rel="preload" href="https://i.ytimg.com/vi/_NoWp58pHa4/maxresdefault.jpg" as="image" media="(min-width: 420.1px)" >
+    <!-- Head tag Code -->
+</head>
+<body>
+    <header>
+        <h1>
+            <a href="/">
+            Cron Job Laravel at Nice090222
+            </a>
+        </h1>
+        <p>
+                            Best Jobs Tips and References website . Search anything about Jobs Ideas in this website.
+                    </p>
+        <center>
+            <input class='search-box' id="search-box" placeholder='Search and hit enter..' type='text' name="q" required autocomplete="off" id="search-query">
+            <div class="d-block p-4">
+	<center>
+		<!-- TOP BANNER ADS -->
+	</center>
+</div>        </center>
+    </header>
+    <main>
+        <article>
+    <p><strong>Cron Job Laravel</strong>. You can also write database logic or send email notification using laravel cron job. Tutorial ini difokuskan pada laravel 8 cron job setup.</p>
+            <figure>
+        <img class="v-cover ads-img lazyload" data-src="https://i.ytimg.com/vi/_NoWp58pHa4/maxresdefault.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Laravel 8 Cron Job Task Scheduling YouTube" width="640" height="360" />
+        <figcaption>Laravel 8 Cron Job Task Scheduling YouTube from www.youtube.com</figcaption>
+    </figure>
+        <p>
+        Cron job atau biasa disebut cronjob merupakan sebutan penggunaan cron untuk menjadwalkan task secara otomatis pada waktu yang ditentukan. It could be creating backups or generating site traffic reports, sending promotional emails, or optimizing the database. So, let&#039;s follow a few steps to engender an example of cron&#039;s job schedule laravel 8.
+    </p>
+    <h3>Laravel 8 Cron Job Task Scheduling YouTube</h3>
+    <p>Cron expression is used for setting the schedule frequency. You can also run the cron job at an interval of time, let’s say every 10 minutes. The scheduler is only useful if you want to have multiple tasks. However, laravel cron job scheduling makes the entire process very easy.</p>
+</article>
+
+<section>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="Laravel Scheduling cron job on host Stack Overflow" data-src="https://i.stack.imgur.com/uZPG6.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: stackoverflow.com</small>
+                    <p align="justify">Dengan menggunakan cronjob, nantinya hanya dengan menjalankan script penjadwalan tertentu, sebuah task bisa dilakukan secara berulang pada. So just we use this facility. Uji coba cron job laravel. This article goes into detail on how to make a cron job at this time. We will create cron job command and you can run cron every seconds, every minutes, every hours.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="How To Setup Laravel Cron Job Over Windows 10 YouTube" data-src="https://i.ytimg.com/vi/M2Ss0oUPBFQ/maxresdefault.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: www.youtube.com</small>
+                    <p align="justify">Laravel 8 cron job task scheduling tutorial with example. Today i expounded simply step by step laravel 8 cron job scheduler. Rather than add many cron job entries on the server per task, we only created one which is executed every minute and delegates responsibility to laravel’s task scheduler. Please follow the instruction given below:  in many time you need.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="Cómo configurar cron jobs de Laravel en Cpanel" data-src="https://blog.pleets.org/img/articles/cron-job-cpanel.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: blog.pleets.org</small>
+                    <p align="justify">Untuk melakukan setting cronjob di hosting, silahkan baca cara setting cronjob di hosting.silahkan masukkan periode waktu pada kolom commong settings. The laravel scheduler assumes you have a cronjob every minutes. Laravel cron job is an inbuilt task manager that gives your applications the ability to execute specific commands like sending a slack notification or removing inactive users at. Dengan menggunakan.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="برنامه ریزی عملیات ها با استفاده از Laravel cron job سون لرن" data-src="https://s.7learn.com/uploads/2019/01/29975-1.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: 7learn.com</small>
+                    <p align="justify">Laravel&#039;s command scheduler offers a fresh approach to managing scheduled tasks on your server. We will send this mail using task scheduling. So just we use this facility. Cron job atau biasa disebut cronjob merupakan sebutan penggunaan cron untuk menjadwalkan task secara otomatis pada waktu yang ditentukan. I will give step by step example of laravel 5 task scheduler.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="Cron Job Laravel Windows Otomatisasi Menggunakan Task" data-src="https://soft-gain.com/wp-content/uploads/2020/06/ss-4-2.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: soft-gain.com</small>
+                    <p align="justify">With this scheduler, you can manage your periodical tasks on the server. Usually, this file is empty. All cron jobs entries are stored in a file called crontab. We will send this mail using task scheduling. It could be creating backups or generating site traffic reports, sending promotional emails, or optimizing the database.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="Laravel Advanced Task Scheduling CRON Job YouTube" data-src="https://i.ytimg.com/vi/_NoWp58pHa4/maxresdefault.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: www.youtube.com</small>
+                    <p align="justify">I will give step by step example of laravel 5 task scheduler. Untuk melakukan setting cronjob di hosting, silahkan baca cara setting cronjob di hosting.silahkan masukkan periode waktu pada kolom commong settings. Today i’ll discuss about cron jobs, how you can setup task scheduling and run through cron jobs. Throughout this tutorial, you will learn how to schedule a task.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="How to Setup Dynamic Cron Job(Task Scheduling) in Laravel" data-src="https://free-coder.com/upload/laravel-dynamic-cron.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: free-coder.com</small>
+                    <p align="justify">Task scheduling is an art of systematically set your priorities to achieve your goals on time, on the other hand, cron job is a software utility which is used to schedule a specific task to run periodically in the software application. We will send this mail using task scheduling. Cron job means it will automatically execute as per you are.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="Configure Laravel cron job on cpanel / server YouTube" data-src="https://i.ytimg.com/vi/Udx8MIB0UBY/maxresdefault.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: www.youtube.com</small>
+                    <p align="justify">Today i expounded simply step by step laravel 8 cron job scheduler. So, let&#039;s follow a few steps to engender an example of cron&#039;s job schedule laravel 8. So just we use this facility. Cron jobs are composed of two parts, the cron expression, and a shell command to be run: All cron jobs entries are stored in a file.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="Laravel Cron Jobs with Task Scheduler Example Laravel " data-src="https://i.ytimg.com/vi/4-fSYlokiic/maxresdefault.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: www.youtube.com</small>
+                    <p align="justify">To actually define what to run you should create a new artisan. Apa itu cronjob laravel dan kenapa menggunakannya? Laravel&#039;s command scheduler offers a fresh approach to managing scheduled tasks on your server. Today i expounded simply step by step laravel 8 cron job scheduler. We will be using the latest version of laravel, which is 5.6 at the time.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="Laravel 7 Cron Job Task Scheduling Tutorial with Example" data-src="https://www.positronx.io/wp-content/uploads/2020/07/laravel-cron-job-10633-0.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: www.positronx.io</small>
+                    <p align="justify">Laravel cronjob offers an elegant task scheduling or laravel cronjob scheduling mechanism. This article goes into detail on how to make a cron job at this time. We will be using the latest version of laravel, which is 5.6 at the time of writing this article. We will send this mail using task scheduling. * * * * * command/to/run.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="Laravel 8 Cron Job Task Scheduling YouTube" data-src="https://i.ytimg.com/vi/pHqc-ft3obw/maxresdefault.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: www.youtube.com</small>
+                    <p align="justify">You can also write database logic or send email notification using laravel cron job. In this laravel cronjob tutorial, we would like to share with you how to create cronjob and how to test cronjob in localhost. Saya menjelaskan secara sederhana langkah demi langkah task scheduling laravel 8. You have to check the entire tutorial gradually with your discretion, devote.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="How to set up Task Scheduling with Cron job in Laravel" data-src="https://8bityard.com/wp-content/uploads/2021/01/cron3-1024x554.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: 8bityard.com</small>
+                    <p align="justify">However, this is just the basic theory of cron. Tutorial ini difokuskan pada laravel 8 cron job setup. Making a cron job in laravel 8 is simple and easy. This tutorial will give you simple example of how to create cron job in laravel 8. You have to check the entire tutorial gradually with your discretion, devote constant attention to.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="Cron Job In Laravel 8 Setting up Cron in windows pc" data-src="https://blog.codehunger.in/wp-content/uploads/2021/01/image-5-1024x576.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: blog.codehunger.in</small>
+                    <p align="justify">Tutorial ini difokuskan pada laravel 8 cron job setup. Laravel scheduler adalah fitur yang memungkinkan kamu untuk membuat berbagai perintah dengan kode php dan menjadwalkannya sesuai kebutuhan. You need a linux operating system. You can also run the cron job at an interval of time, let’s say every 10 minutes. Laravel&#039;s command scheduler offers a fresh approach to managing scheduled.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="How to set up Task Scheduling with Cron job in Laravel" data-src="https://8bityard.com/wp-content/uploads/2021/01/cron2-1536x777.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: 8bityard.com</small>
+                    <p align="justify">You can also run the cron job at an interval of time, let’s say every 10 minutes. We will create cron job command and you can run cron every seconds, every minutes, every hours or every days. Cron job means it will automatically execute as per you are defined time. However, this is just the basic theory of cron. You.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="10+ Laravel PHP Framework Benefits 2018" data-src="https://belitsoft.com/sites/default/files/assets/cron-jobs-laravel-development-services.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: belitsoft.com</small>
+                    <p align="justify">This article goes into detail on how to make a cron job at this time. Crontab contains cron jobs, each related to a specific task. Applications require some tasks to be run periodically on the server. In this step by step tutorial i will demonstrate you with example how to schedule cron job in laravel 8 application. Untuk melakukan setting.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="Laravel 7 Cron Job Task Scheduling YouTube" data-src="https://i.ytimg.com/vi/V70doYg1lf0/maxresdefault.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: www.youtube.com</small>
+                    <p align="justify"> in many time you need to this type functionality in your laravel application. Trying the command by myself in the console works perfectly. Throughout this tutorial, you will learn how to schedule a task in laravel 8 application using cron job. However, this is just the basic theory of cron. So, let&#039;s follow a few steps to engender an example.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="Laravel Scheduling a Cron Job" data-src="https://mattstauffer.com/assets/images/content/forge-add-cron-job.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: mattstauffer.com</small>
+                    <p align="justify">In this laravel cronjob tutorial, we would like to share with you how to create cronjob and how to test cronjob in localhost. This tutorial will give you simple example of how to create cron job in laravel 8. This configuration file contains all the cron jobs for each specified task. To understand more about how to create cron jobs.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="Laravel Schedulable Schedule Eloquent Models without" data-src="https://bestof.nyc3.digitaloceanspaces.com/laravel/laravel-laravel-schedulable/1.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: bestlaravel.com</small>
+                    <p align="justify">To add a new cron job entry, edit the file and add below on a new. All cron jobs entries are stored in a file called crontab. This configuration file contains all the cron jobs for each specified task. Create cron job command class. Cron is configured in a crontab to manage the task scheduling process.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="Laravel 8 Cron Job Task Scheduling Example" data-src="https://www.nicesnippets.com/upload/blog/1602738412_cron-job-min.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: www.nicesnippets.com</small>
+                    <p align="justify">Laravel cron job is an inbuilt task manager that gives your applications the ability to execute specific commands like sending a slack notification or removing inactive users at. To actually define what to run you should create a new artisan. You have to check the entire tutorial gradually with your discretion, devote constant attention to your precedence to learn task.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="Laravel 6 Cron Job (Cpanel ve Plesk) Başlatma SAMET" data-src="https://sametalemdaroglu.com/wp-content/uploads/2020/02/laravel6-2048x1047.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: sametalemdaroglu.com</small>
+                    <p align="justify">In this tutorial, we will know how to create a cron jon in laravel 8. Normally you have one single cronjob configured in cpanel and you can set the scheduler to everyweek() and have another task that would be everyday() without having to add of change the cronjobs in your cpanel. You can also write database logic or send email.</p>
+    </aside>
+</section>
+
+<section>
+    <article>
+        <p>
+                        
+                        
+                                    <a href="/translation-jobs-for-beginners.html"><i>&larr; translation jobs for beginners</i></a>
+                                                                    
+                        
+                                                    <a href="/kroger-jobs-indeed.html"><i>kroger jobs indeed &rarr;</i></a>
+                                            </p>
+    </article>
+</section>
+        <center>
+            <div class="d-block p-4">
+	<center>
+		<!-- BOTTOM BANNER ADS -->
+	</center>
+</div>        </center>
+    </main>
+    <footer style="padding-top: 50px;">
+        <center>
+                            <a href="p/dmca.html">Dmca</a>
+                            <a href="p/contact.html">Contact</a>
+                            <a href="p/privacy-policy.html">Privacy Policy</a>
+                            <a href="p/copyright.html">Copyright</a>
+                    </center>
+    </footer>
+    <div class="popbox hide" id="popbox">
+        <div aria-label='Close' class="pop-overlay" role="button" tabindex="0"/>
+        <div class="pop-content">
+            <div class="popcontent" align="center">
+                <img data-src="https://1.bp.blogspot.com/-y8AsxfEerDc/YFSyMPZF14I/AAAAAAAAAAM/JUegMgSE-3o5A_06mx0Fir2-dkB6fAGvACLcBGAsYHQ/s640/re.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  width="640" height="320" class="lazyload" alt="" />
+                <button class='g_url btn btn-success btn-dwn m-2'>Confirm</button>
+                <br/>
+            </div>
+            <button class='g_url popbox-close-button'>&times;</button>
+        </div>
+    </div>
+    <!-- Footer CSS JS -->    <script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.slim.min.js" integrity="sha512-6ORWJX/LrnSjBzwefdNUyLCMTIsGoNP6NftMy2UAm1JBm6PRZCO1d7OHBStWpVFZLO+RerTvqX/Z9mBFfCJZ4A==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.0/lazysizes.min.js" integrity="sha512-JrL1wXR0TeToerkl6TPDUa9132S3PB1UeNpZRHmCe6TxS43PFJUcEYUhjJb/i63rSd+uRvpzlcGOtvC/rDQcDg==" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        var current     = window.location.href;
+        var g_confirm   = current.includes('c=1');
+        var go_ads      = '#EDIT-WITH-YOUR-ADS';
+
+        $(document).ready(function()
+        {
+            if(go_ads.includes('//'))
+            {
+                if(!g_confirm)
+                {
+                    $(window).scroll(function (event) {
+                        var scroll = $(window).scrollTop();
+                        if (scroll >= 200) {
+                            $('#popbox').removeClass('hide');
+                        }
+                        console.log('scroll..');                    
+                    });
+                }
+
+                $(document).on('click','.g_url',function(e)
+                {
+                    e.preventDefault();
+
+                    var g_target=current.includes("?")?current+"&c=1":current+"?c=1";
+
+                    window.open(go_ads,"_blank");
+                    window.location.href=g_target;
+                });
+
+                $(document).on('click','.ads-img',function(e)
+                {
+                    e.preventDefault();
+                    window.open(go_ads, '_blank');
+                });
+            }
+
+            $("[id*='google-cache']").remove();        
+
+            $(document).on('submit','#search-box',function(e){
+                e.preventDefault();
+                var query = $('input[name="q"]').val();
+                query = query.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '').replace(/\s\s+/g, ' ');
+                var target = 'site:'+location.host+' '+query;
+                var uri= 'https://www.google.com/search?q='+encodeURIComponent(target);
+                window.open(uri, '_blank');
+            });
+        });
+    </script>
+</body>
+
+</html>

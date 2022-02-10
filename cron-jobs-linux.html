@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Cron Jobs Linux at Nice090222
+    </title>
+    <style>:root{--border-radius:5px;--box-shadow:2px 2px 10px;--color:#118bee;--color-accent:#118bee15;--color-bg:#fff;--color-bg-secondary:#e9e9e9;--color-secondary:#0645AD;--color-secondary-accent:#920de90b;--color-shadow:#f4f4f4;--color-text:#000;--color-text-secondary:#999;--font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;--hover-brightness:1.2;--justify-important:center;--justify-normal:left;--line-height:1.5;--width-card:285px;--width-card-medium:460px;--width-card-wide:800px;--width-content:1080px}article aside{background:var(--color-secondary-accent);border-left:4px solid var(--color-secondary);padding:.01rem .8rem}body{background:var(--color-bg);color:var(--color-text);font-family:var(--font-family);line-height:var(--line-height);margin:0;overflow-x:hidden;padding:1rem 0}footer,header,main{margin:0 auto;max-width:var(--width-content);padding:0rem 1rem}hr{background-color:var(--color-bg-secondary);border:none;height:1px;margin:4rem 0}section{display:flex;flex-wrap:wrap;justify-content:var(--justify-important)}section aside{border:1px solid var(--color-bg-secondary);border-radius:var(--border-radius);box-shadow:var(--box-shadow) var(--color-shadow);margin:1rem;padding:1.25rem;width:var(--width-card)}section aside:hover{box-shadow:var(--box-shadow) var(--color-bg-secondary)}section aside img{max-width:100%}[hidden]{display:none}article header,div header,main header{padding-top:0}header{text-align:var(--justify-important)}header a b,header a em,header a i,header a strong{margin-left:.5rem;margin-right:.5rem}header nav img{margin:1rem 0}section header{padding-top:0;width:100%}nav{align-items:center;display:flex;font-weight:700;justify-content:space-between;margin-bottom:7rem}nav ul{list-style:none;padding:0}nav ul li{display:inline-block;margin:0 .5rem;position:relative;text-align:left}nav ul li:hover ul{display:block}nav ul li ul{background:var(--color-bg);border:1px solid var(--color-bg-secondary);border-radius:var(--border-radius);box-shadow:var(--box-shadow) var(--color-shadow);display:none;height:auto;left:-2px;padding:.5rem 1rem;position:absolute;top:1.7rem;white-space:nowrap;width:auto}nav ul li ul li,nav ul li ul li a{display:block}code,samp{background-color:var(--color-accent);border-radius:var(--border-radius);color:var(--color-text);display:inline-block;margin:0 .1rem;padding:0 .5rem}details{margin:1.3rem 0}details summary{font-weight:700;cursor:pointer}h1,h2,h3,h4,h5,h6{line-height:var(--line-height)}mark{padding:.1rem}ol li,ul li{padding:.2rem 0}p{margin:.75rem 0;padding:0}pre{margin:1rem 0;max-width:var(--width-card-wide);padding:1rem 0}pre code,pre samp{display:block;max-width:var(--width-card-wide);padding:.5rem 2rem;white-space:pre-wrap}small{color:var(--color-text-secondary)}sup{background-color:var(--color-secondary);border-radius:var(--border-radius);color:var(--color-bg);font-size:xx-small;font-weight:700;margin:.2rem;padding:.2rem .3rem;position:relative;top:-2px}a{color:var(--color-secondary);display:inline-block;text-decoration:none}a:hover{filter:brightness(var(--hover-brightness));text-decoration:underline}a b,a em,a i,a strong,button{border-radius:var(--border-radius);display:inline-block;font-size:medium;font-weight:700;line-height:var(--line-height);margin:.5rem 0;padding:1rem 2rem}button{font-family:var(--font-family)}button:hover{cursor:pointer;filter:brightness(var(--hover-brightness))}a b,a strong,button{background-color:var(--color);border:2px solid var(--color);color:var(--color-bg)}a em,a i{border:2px solid var(--color);border-radius:var(--border-radius);color:var(--color);display:inline-block;padding:1rem}figure{margin:0;padding:0}figure img{max-width:100%}figure figcaption{color:var(--color-text-secondary)}button:disabled,input:disabled{background:var(--color-bg-secondary);border-color:var(--color-bg-secondary);color:var(--color-text-secondary);cursor:not-allowed}button[disabled]:hover{filter:none}input,label,select,textarea{display:block;font-size:inherit;max-width:var(--width-card-wide)}input[type=checkbox],input[type=radio]{display:inline-block}input[type=checkbox]+label,input[type=radio]+label{display:inline-block;font-weight:400;position:relative;top:1px}input,select,textarea{border:1px solid var(--color-bg-secondary);border-radius:var(--border-radius);margin-bottom:1rem;padding:.4rem .8rem}input[readonly],textarea[readonly]{background-color:var(--color-bg-secondary)}label{font-weight:700;margin-bottom:.2rem}table{border:1px solid var(--color-bg-secondary);border-radius:var(--border-radius);border-spacing:0;display:inline-block;max-width:100%;overflow-x:auto;padding:0;white-space:nowrap}table td,table th,table tr{padding:.4rem .8rem;text-align:var(--justify-important)}table thead{background-color:var(--color);border-collapse:collapse;border-radius:var(--border-radius);color:var(--color-bg);margin:0;padding:0}table thead th:first-child{border-top-left-radius:var(--border-radius)}table thead th:last-child{border-top-right-radius:var(--border-radius)}table thead th:first-child,table tr td:first-child{text-align:var(--justify-normal)}table tr:nth-child(even){background-color:var(--color-accent)}blockquote{display:block;font-size:x-large;line-height:var(--line-height);margin:1rem auto;max-width:var(--width-card-medium);padding:1.5rem 1rem;text-align:var(--justify-important)}blockquote footer{color:var(--color-text-secondary);display:block;font-size:small;line-height:var(--line-height);padding:1.5rem 0} article{padding: 1.25rem;}.v-cover{height: auto;max-height: 480px; object-fit: cover;width: 100%;cursor: pointer;}.v-image{height: 250px; object-fit: cover;width: 100vw;cursor: pointer;}.dwn-cover{max-height: 460px; object-fit: cover;}.w-100{width: 100vw}.search-box{color:#333;background-color:#f5f5f5;width:85%;height:50px;padding:0 20px;border:none;border-radius:20px;outline:0;border:1px solid #002cd92e}.search-box:active,.search-box:focus,.search-box:hover{border:1px solid #d9008e}.btn{display:inline-block;font-weight:400;color:#212529;text-align:center;vertical-align:middle;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-color:transparent;border:1px solid transparent;border-top-color:transparent;border-right-color:transparent;border-bottom-color:transparent;border-left-color:transparent;padding:.375rem .75rem;margin:0.5rem;font-size:1rem;line-height:1.5;border-radius:.25rem;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out}.btn-danger{color:#fff;background-color:#dc3545;border-color:#dc3545}.btn-success{color:#fff;background-color:#28a745;border-color:#28a745}.btn-group-sm>.btn,.btn-sm{padding:.25rem .5rem;font-size:.875rem;line-height:1.5;border-radius:.2rem}.hide{display:none;visibility:hidden}.popbox{position:fixed;top:0;left:0;bottom:0;width:100%;z-index:1000000}.pop-content{display:block;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;box-shadow:0 3px 20px 0 rgba(0,0,0,.5)}.popcontent{padding:20px;background:#fff;border-radius:5px;overflow:hidden}.pop-overlay{position:absolute;top:0;left:0;bottom:0;width:100%;z-index:1;background:rgb(255 255 255 / 93%)}.popbox-close-button{position:absolute;width:28px;height:28px;line-height:28px;text-align:center;top:-14px;right:-14px;color:#c82333;background-color:#fff;box-shadow:0 -1px 1px 0 rgba(0,0,0,.2);border:none;border-radius:50%;cursor:pointer;font-size:28px;font-weight:700;padding:0}.popcontent img{width:100%;height:100%;display:block}.flowbox{position:relative;overflow:hidden}@media  screen and (max-width:840px){.pop-content{width:90%;height:auto;top:20%}.popcontent img{height:auto}}
+</style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org/", 
+  "@type": "Article", 
+  "author": {
+    "@type": "Person",
+    "name": "James"
+  },
+  "headline": "Cron Jobs Linux",
+  "datePublished": "2022-01-10T18:08:31Z",
+  "image": "https://i.ytimg.com/vi/8j0SWYNglcw/maxresdefault.jpg",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jobs Tips and References",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://via.placeholder.com/512.png?text=cron%20jobs%20linux",
+      "width": 512,
+      "height": 512
+    }
+  }
+}
+</script>
+<link rel="preconnect" href="https://i.pinimg.com">
+<link rel="dns-prefetch" href="https://i.pinimg.com">
+<link rel="preload" href="https://cdn.journaldev.com/wp-content/uploads/2019/05/crontab-guru.png" as="image" media="(max-width: 420px)">
+<link rel="preload" href="https://cdn.journaldev.com/wp-content/uploads/2019/05/crontab-guru.png" as="image" media="(min-width: 420.1px)" >
+    <!-- Head tag Code -->
+</head>
+<body>
+    <header>
+        <h1>
+            <a href="/">
+            Cron Jobs Linux at Nice090222
+            </a>
+        </h1>
+        <p>
+                            Best Jobs Tips and References website . Search anything about Jobs Ideas in this website.
+                    </p>
+        <center>
+            <input class='search-box' id="search-box" placeholder='Search and hit enter..' type='text' name="q" required autocomplete="off" id="search-query">
+            <div class="d-block p-4">
+	<center>
+		<!-- TOP BANNER ADS -->
+	</center>
+</div>        </center>
+    </header>
+    <main>
+        <article>
+    <p><strong>Cron Jobs Linux</strong>. The tables contain the cron jobs for all users, except the root user. The crontab (short for “cron table”) is a list of commands that are scheduled to run at regular time intervals on your computer system.</p>
+            <figure>
+        <img class="v-cover ads-img lazyload" data-src="https://cdn.journaldev.com/wp-content/uploads/2019/05/crontab-guru.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="How To Comment Cron Job In Linux Job Retro" width="640" height="360" />
+        <figcaption>How To Comment Cron Job In Linux Job Retro from jobretro.blogspot.com</figcaption>
+    </figure>
+        <p>
+        That’s why every system administrator loves this cron utility. Cron is a scheduling daemon that allows you to schedule the execution of tasks at specified intervals. The crontab is the method you use to create, edit, install, uninstall, and list cron jobs.
+    </p>
+    <h3>How To Comment Cron Job In Linux Job Retro</h3>
+    <p>Cron can handle multiple tasks and run them at their scheduled time. Cron is a daemon that executes the tasks in the system background. The command for creating and editing cron jobs is the same and simple. The cron ( crond ) service reads crontab (cron tables) and executes listed scheduled tasks.</p>
+</article>
+
+<section>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="Linux List / Display and view all cron jobs nixCraft" data-src="https://www.cyberciti.biz/media/new/faq/2009/07/How-to-Display-List-All-Jobs-in-Cron-or-Crontab.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: www.cyberciti.biz</small>
+                    <p align="justify">The syntax is different than most other commands. This giant guideline will definitely help you to understand everything about the cron jobs in linux/unix. The default crontab command works for the current logged in user. By using a specific syntax, you can configure a cron job to schedule scripts or other commands to run automatically. You can also execute the.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="HowTo Cron jobs in Linux How to Linux" data-src="https://www.htlinux.com/wp-content/uploads/2015/06/Cron.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: www.htlinux.com</small>
+                    <p align="justify">The syntax is different than most other commands. This tutorial will show you the several options to list all scheduled cron jobs for users on linux systems. This is the file (and command) where you define what task to run and how often to run it. It is mostly used for automating recurring jobs. Cron jobs are usually used in.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="Learn To Automate Tasks In Linux With Cron Jobs Linux" data-src="https://i.pinimg.com/236x/2b/cc/49/2bcc49c0a9feed65fd0cc123f4888950.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: www.pinterest.com</small>
+                    <p align="justify">And what’s even cooler is that you don’t need to restart cron after creating new files or editing existing ones. However, a cron job is any defined task to run in a given time period. How to list cron jobs of current user. The cron ( crond ) service reads crontab (cron tables) and executes listed scheduled tasks. On the.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="Cron Jobs For Beginners Linux Task Scheduling YouTube" data-src="https://i.ytimg.com/vi/v952m13p-b4/maxresdefault.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: www.youtube.com</small>
+                    <p align="justify">This is the file (and command) where you define what task to run and how often to run it. Some scripts, such as drupal and whmcs may require you to set up cron jobs to perform certain functions. The default crontab command works for the current logged in user. They are stored in tables called crontabs. For a linux os.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="How to Create and Add Cron Jobs in Linux All Things How" data-src="https://i2.wp.com/allthings.how/wp-content/uploads/2020/02/Add-Cron-Job-Linux.png?w=1200&amp;ssl=1" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: allthings.how</small>
+                    <p align="justify">For individual users, the cron service checks the following file: It can be somewhat challenging to get started if you’re a beginner. These tasks are called cron jobs and can be scheduled to run by a minute, hour, day of the month, month, day of the week, or any combination of these. Cron is a daemon that executes the tasks.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="How to schedule a Cron Job in Linux Predictive Hacks" data-src="https://predictivehacks.com/wp-content/uploads/2019/08/cron.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: predictivehacks.com</small>
+                    <p align="justify">The tables contain the cron jobs for all users, except the root user. And what’s even cooler is that you don’t need to restart cron after creating new files or editing existing ones. The linux system pack includes crontab, a helpful job scheduler that can perform an automatic procedure as root. For a linux os running systemd as a service.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="UneDose Jak uruchomić Linux Cron Jobs w systemie Windows" data-src="https://unedose.fr/storage/img/images_20/how-to-run-linux-style-cron-jobs-on-windows_7.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: pl.unedose.fr</small>
+                    <p align="justify">The syntax is different than most other commands. The root user can use the crontab for the whole system. The tasks scheduled for later execution are known as “ cron jobs “. The crontab contains cron jobs that assist the operating system while taking a scheduled backup of log files or databases. The cron ( crond ) service reads crontab.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="Different ways to schedule and list CRON jobs in Linux" data-src="https://www.howtoforge.com/images/different_ways_to_schedule_and_list_cron_jobs_in_linux/big/8.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: www.howtoforge.com</small>
+                    <p align="justify">It helps you automate the repeating tasks at ease. Cron is a system that helps linux users to schedule any task. A cron job is any task that you configured and scheduled. Just type the following command as root user: This tutorial will show you the several options to list all scheduled cron jobs for users on linux systems.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="Linux CronTabs, Cron Jobs, Task Schedulers YouTube" data-src="http://i.ytimg.com/vi/4Icg3MYZZqI/maxresdefault.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: youtube.com</small>
+                    <p align="justify">Cron jobs are typically located in the spool directories. # # each task to run has to be defined through a single line # indicating with different fields when the task will be run # and what command to run for the task. However, deleting any cron job can be a tricky task while surrounding crontab. It is one of.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="Linux crontab Command to Create and Manage Cron Jobs With" data-src="https://all-learning.com/wp-content/uploads/2019/05/crontab-gurus.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: all-learning.com</small>
+                    <p align="justify">Some scripts, such as drupal and whmcs may require you to set up cron jobs to perform certain functions. The scheduled commands and scripts are also named as cron jobs. If you want to check what users on your machine are already using cron jobs, you can check the same file that crond uses. The crontab contains cron jobs that.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="How to Enable Cron Jobs on Cpanel host Eldernode" data-src="https://blog.eldernode.com/wp-content/uploads/2020/04/How-to-Enable-Cron-Jobs-on-Cpanel-host-2048x1122.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: blog.eldernode.com</small>
+                    <p align="justify">Any task that you schedule through crons is called a cron job. Cron jobs are usually used in order to log certain events to your syslog utilities, or to schedule backup operations on your host (like database backups or filesystem backups). User can install their own cron jobs using the crontab command.the sixth field is the command to run, and.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="Scheduling Tasks in Linux The CRONTAB Command YouTube" data-src="https://i.ytimg.com/vi/UlVqobmcPuM/maxresdefault.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: www.youtube.com</small>
+                    <p align="justify">For individual users, the cron service checks the following file: A cron job is a linux command used for scheduling tasks to be executed sometime in the future. Cron is a linux utility that allows users to schedule a command or script to run periodically at a specified date, time, or intervals. Contents of /var/spool/cron/crontabs what are cron jobs in.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="How to configure Crontab on Linux" data-src="https://webdock.io/application/files/9715/8144/7549/crontab-6.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: webdock.io</small>
+                    <p align="justify">The scheduled commands and scripts are also named as cron jobs. The linux system pack includes crontab, a helpful job scheduler that can perform an automatic procedure as root. Just type the following command as root user: If you want to check what users on your machine are already using cron jobs, you can check the same file that crond.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="Linux定时任务 Crontab 标点符" data-src="https://www.biaodianfu.com/wp-content/uploads/2020/10/crontab.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: www.biaodianfu.com</small>
+                    <p align="justify">The default crontab command works for the current logged in user. Cron jobs are usually used in order to log certain events to your syslog utilities, or to schedule backup operations on your host (like database backups or filesystem backups). For a linux os running systemd as a service manager, you can inspect the cron service by running the following.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="How to set up a cron job in Linux? Nil Blog" data-src="https://nil.pro.np/wp-content/uploads/2021/04/cron-job-expression-syntax.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: nil.pro.np</small>
+                    <p align="justify">Cron jobs are usually used in order to log certain events to your syslog utilities, or to schedule backup operations on your host (like database backups or filesystem backups). It is a daemon process , which runs as a background process and performs the specified operations at the predefined time when a certain event or condition is triggered without the.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="How To Comment Cron Job In Linux Job Retro" data-src="https://i.ytimg.com/vi/8j0SWYNglcw/maxresdefault.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: jobretro.blogspot.com</small>
+                    <p align="justify">Therefore, learning how to schedule cron jobs will significantly increase your work efficiency as a vps administrator. 18 rows  cron is named after greek word “chronos” that is used for time. What are cron, cron job, and crontab? If you want to check what users on your machine are already using cron jobs, you can check the same file that.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="Linux crontab Command to Create and Manage Cron Jobs" data-src="https://cdn.journaldev.com/wp-content/uploads/2019/05/crontab-guru.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: www.journaldev.com</small>
+                    <p align="justify">For individual users, the cron service checks the following file: Contents of /var/spool/cron/crontabs what are cron jobs in linux? As mentioned before, cron jobs are useful for automating repetitive tasks, workflows, routine tasks, or anything else that you want to automate. User can install their own cron jobs using the crontab command.the sixth field is the command to run, and.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="Linux AutoReboot and Shutdown with Cron Jobs" data-src="https://i1.wp.com/www.ryadel.com/wp-content/uploads/2018/11/crontab-guru-logo-screenshot-cron-job.jpg?ssl=1" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: www.ryadel.com</small>
+                    <p align="justify">You can find them in /var/spool/cron/crontabs. What is use of crontab in linux? To display contents of the root user’s crontab, use the less command: Cron is the task scheduler for linux, and it’s one of the most useful tools for system administrators. The cron ( crond ) service reads crontab (cron tables) and executes listed scheduled tasks.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="6 Online Tools for Generating and Testing Cron Jobs for Linux" data-src="https://www.tecmint.com/wp-content/uploads/2018/01/EasyCron.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: www.tecmint.com</small>
+                    <p align="justify">A few examples of common uses for cron jobs:. What are cron, cron job, and crontab? Backing up some files periodically. The cron ( crond ) service reads crontab (cron tables) and executes listed scheduled tasks. What is use of crontab in linux?</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="Scheduling Cron Jobs with Crontab Linuxize" data-src="https://linuxize.com/post/scheduling-cron-jobs-with-crontab/featured.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: linuxize.com</small>
+                    <p align="justify">What are cron, cron job, and crontab? Cron jobs are usually used in order to log certain events to your syslog utilities, or to schedule backup operations on your host (like database backups or filesystem backups). Cron is a system that helps linux users to schedule any task. The command for creating and editing cron jobs is the same and.</p>
+    </aside>
+</section>
+
+<section>
+    <article>
+        <p>
+                        
+                        
+                                    <a href="/healthcare-administration-jobs-entry-level.html"><i>&larr; healthcare administration jobs entry level</i></a>
+                                                                    
+                        
+                                                    <a href="/cvs-work-from-home-jobs-memphis-tn.html"><i>cvs work from home jobs memphis tn &rarr;</i></a>
+                                            </p>
+    </article>
+</section>
+        <center>
+            <div class="d-block p-4">
+	<center>
+		<!-- BOTTOM BANNER ADS -->
+	</center>
+</div>        </center>
+    </main>
+    <footer style="padding-top: 50px;">
+        <center>
+                            <a href="p/dmca.html">Dmca</a>
+                            <a href="p/contact.html">Contact</a>
+                            <a href="p/privacy-policy.html">Privacy Policy</a>
+                            <a href="p/copyright.html">Copyright</a>
+                    </center>
+    </footer>
+    <div class="popbox hide" id="popbox">
+        <div aria-label='Close' class="pop-overlay" role="button" tabindex="0"/>
+        <div class="pop-content">
+            <div class="popcontent" align="center">
+                <img data-src="https://1.bp.blogspot.com/-y8AsxfEerDc/YFSyMPZF14I/AAAAAAAAAAM/JUegMgSE-3o5A_06mx0Fir2-dkB6fAGvACLcBGAsYHQ/s640/re.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  width="640" height="320" class="lazyload" alt="" />
+                <button class='g_url btn btn-success btn-dwn m-2'>Confirm</button>
+                <br/>
+            </div>
+            <button class='g_url popbox-close-button'>&times;</button>
+        </div>
+    </div>
+    <!-- Footer CSS JS -->    <script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.slim.min.js" integrity="sha512-6ORWJX/LrnSjBzwefdNUyLCMTIsGoNP6NftMy2UAm1JBm6PRZCO1d7OHBStWpVFZLO+RerTvqX/Z9mBFfCJZ4A==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.0/lazysizes.min.js" integrity="sha512-JrL1wXR0TeToerkl6TPDUa9132S3PB1UeNpZRHmCe6TxS43PFJUcEYUhjJb/i63rSd+uRvpzlcGOtvC/rDQcDg==" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        var current     = window.location.href;
+        var g_confirm   = current.includes('c=1');
+        var go_ads      = '#EDIT-WITH-YOUR-ADS';
+
+        $(document).ready(function()
+        {
+            if(go_ads.includes('//'))
+            {
+                if(!g_confirm)
+                {
+                    $(window).scroll(function (event) {
+                        var scroll = $(window).scrollTop();
+                        if (scroll >= 200) {
+                            $('#popbox').removeClass('hide');
+                        }
+                        console.log('scroll..');                    
+                    });
+                }
+
+                $(document).on('click','.g_url',function(e)
+                {
+                    e.preventDefault();
+
+                    var g_target=current.includes("?")?current+"&c=1":current+"?c=1";
+
+                    window.open(go_ads,"_blank");
+                    window.location.href=g_target;
+                });
+
+                $(document).on('click','.ads-img',function(e)
+                {
+                    e.preventDefault();
+                    window.open(go_ads, '_blank');
+                });
+            }
+
+            $("[id*='google-cache']").remove();        
+
+            $(document).on('submit','#search-box',function(e){
+                e.preventDefault();
+                var query = $('input[name="q"]').val();
+                query = query.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '').replace(/\s\s+/g, ' ');
+                var target = 'site:'+location.host+' '+query;
+                var uri= 'https://www.google.com/search?q='+encodeURIComponent(target);
+                window.open(uri, '_blank');
+            });
+        });
+    </script>
+</body>
+
+</html>

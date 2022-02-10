@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Cron Job Php at Nice090222
+    </title>
+    <style>:root{--border-radius:5px;--box-shadow:2px 2px 10px;--color:#118bee;--color-accent:#118bee15;--color-bg:#fff;--color-bg-secondary:#e9e9e9;--color-secondary:#0645AD;--color-secondary-accent:#920de90b;--color-shadow:#f4f4f4;--color-text:#000;--color-text-secondary:#999;--font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;--hover-brightness:1.2;--justify-important:center;--justify-normal:left;--line-height:1.5;--width-card:285px;--width-card-medium:460px;--width-card-wide:800px;--width-content:1080px}article aside{background:var(--color-secondary-accent);border-left:4px solid var(--color-secondary);padding:.01rem .8rem}body{background:var(--color-bg);color:var(--color-text);font-family:var(--font-family);line-height:var(--line-height);margin:0;overflow-x:hidden;padding:1rem 0}footer,header,main{margin:0 auto;max-width:var(--width-content);padding:0rem 1rem}hr{background-color:var(--color-bg-secondary);border:none;height:1px;margin:4rem 0}section{display:flex;flex-wrap:wrap;justify-content:var(--justify-important)}section aside{border:1px solid var(--color-bg-secondary);border-radius:var(--border-radius);box-shadow:var(--box-shadow) var(--color-shadow);margin:1rem;padding:1.25rem;width:var(--width-card)}section aside:hover{box-shadow:var(--box-shadow) var(--color-bg-secondary)}section aside img{max-width:100%}[hidden]{display:none}article header,div header,main header{padding-top:0}header{text-align:var(--justify-important)}header a b,header a em,header a i,header a strong{margin-left:.5rem;margin-right:.5rem}header nav img{margin:1rem 0}section header{padding-top:0;width:100%}nav{align-items:center;display:flex;font-weight:700;justify-content:space-between;margin-bottom:7rem}nav ul{list-style:none;padding:0}nav ul li{display:inline-block;margin:0 .5rem;position:relative;text-align:left}nav ul li:hover ul{display:block}nav ul li ul{background:var(--color-bg);border:1px solid var(--color-bg-secondary);border-radius:var(--border-radius);box-shadow:var(--box-shadow) var(--color-shadow);display:none;height:auto;left:-2px;padding:.5rem 1rem;position:absolute;top:1.7rem;white-space:nowrap;width:auto}nav ul li ul li,nav ul li ul li a{display:block}code,samp{background-color:var(--color-accent);border-radius:var(--border-radius);color:var(--color-text);display:inline-block;margin:0 .1rem;padding:0 .5rem}details{margin:1.3rem 0}details summary{font-weight:700;cursor:pointer}h1,h2,h3,h4,h5,h6{line-height:var(--line-height)}mark{padding:.1rem}ol li,ul li{padding:.2rem 0}p{margin:.75rem 0;padding:0}pre{margin:1rem 0;max-width:var(--width-card-wide);padding:1rem 0}pre code,pre samp{display:block;max-width:var(--width-card-wide);padding:.5rem 2rem;white-space:pre-wrap}small{color:var(--color-text-secondary)}sup{background-color:var(--color-secondary);border-radius:var(--border-radius);color:var(--color-bg);font-size:xx-small;font-weight:700;margin:.2rem;padding:.2rem .3rem;position:relative;top:-2px}a{color:var(--color-secondary);display:inline-block;text-decoration:none}a:hover{filter:brightness(var(--hover-brightness));text-decoration:underline}a b,a em,a i,a strong,button{border-radius:var(--border-radius);display:inline-block;font-size:medium;font-weight:700;line-height:var(--line-height);margin:.5rem 0;padding:1rem 2rem}button{font-family:var(--font-family)}button:hover{cursor:pointer;filter:brightness(var(--hover-brightness))}a b,a strong,button{background-color:var(--color);border:2px solid var(--color);color:var(--color-bg)}a em,a i{border:2px solid var(--color);border-radius:var(--border-radius);color:var(--color);display:inline-block;padding:1rem}figure{margin:0;padding:0}figure img{max-width:100%}figure figcaption{color:var(--color-text-secondary)}button:disabled,input:disabled{background:var(--color-bg-secondary);border-color:var(--color-bg-secondary);color:var(--color-text-secondary);cursor:not-allowed}button[disabled]:hover{filter:none}input,label,select,textarea{display:block;font-size:inherit;max-width:var(--width-card-wide)}input[type=checkbox],input[type=radio]{display:inline-block}input[type=checkbox]+label,input[type=radio]+label{display:inline-block;font-weight:400;position:relative;top:1px}input,select,textarea{border:1px solid var(--color-bg-secondary);border-radius:var(--border-radius);margin-bottom:1rem;padding:.4rem .8rem}input[readonly],textarea[readonly]{background-color:var(--color-bg-secondary)}label{font-weight:700;margin-bottom:.2rem}table{border:1px solid var(--color-bg-secondary);border-radius:var(--border-radius);border-spacing:0;display:inline-block;max-width:100%;overflow-x:auto;padding:0;white-space:nowrap}table td,table th,table tr{padding:.4rem .8rem;text-align:var(--justify-important)}table thead{background-color:var(--color);border-collapse:collapse;border-radius:var(--border-radius);color:var(--color-bg);margin:0;padding:0}table thead th:first-child{border-top-left-radius:var(--border-radius)}table thead th:last-child{border-top-right-radius:var(--border-radius)}table thead th:first-child,table tr td:first-child{text-align:var(--justify-normal)}table tr:nth-child(even){background-color:var(--color-accent)}blockquote{display:block;font-size:x-large;line-height:var(--line-height);margin:1rem auto;max-width:var(--width-card-medium);padding:1.5rem 1rem;text-align:var(--justify-important)}blockquote footer{color:var(--color-text-secondary);display:block;font-size:small;line-height:var(--line-height);padding:1.5rem 0} article{padding: 1.25rem;}.v-cover{height: auto;max-height: 480px; object-fit: cover;width: 100%;cursor: pointer;}.v-image{height: 250px; object-fit: cover;width: 100vw;cursor: pointer;}.dwn-cover{max-height: 460px; object-fit: cover;}.w-100{width: 100vw}.search-box{color:#333;background-color:#f5f5f5;width:85%;height:50px;padding:0 20px;border:none;border-radius:20px;outline:0;border:1px solid #002cd92e}.search-box:active,.search-box:focus,.search-box:hover{border:1px solid #d9008e}.btn{display:inline-block;font-weight:400;color:#212529;text-align:center;vertical-align:middle;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-color:transparent;border:1px solid transparent;border-top-color:transparent;border-right-color:transparent;border-bottom-color:transparent;border-left-color:transparent;padding:.375rem .75rem;margin:0.5rem;font-size:1rem;line-height:1.5;border-radius:.25rem;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out}.btn-danger{color:#fff;background-color:#dc3545;border-color:#dc3545}.btn-success{color:#fff;background-color:#28a745;border-color:#28a745}.btn-group-sm>.btn,.btn-sm{padding:.25rem .5rem;font-size:.875rem;line-height:1.5;border-radius:.2rem}.hide{display:none;visibility:hidden}.popbox{position:fixed;top:0;left:0;bottom:0;width:100%;z-index:1000000}.pop-content{display:block;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;box-shadow:0 3px 20px 0 rgba(0,0,0,.5)}.popcontent{padding:20px;background:#fff;border-radius:5px;overflow:hidden}.pop-overlay{position:absolute;top:0;left:0;bottom:0;width:100%;z-index:1;background:rgb(255 255 255 / 93%)}.popbox-close-button{position:absolute;width:28px;height:28px;line-height:28px;text-align:center;top:-14px;right:-14px;color:#c82333;background-color:#fff;box-shadow:0 -1px 1px 0 rgba(0,0,0,.2);border:none;border-radius:50%;cursor:pointer;font-size:28px;font-weight:700;padding:0}.popcontent img{width:100%;height:100%;display:block}.flowbox{position:relative;overflow:hidden}@media  screen and (max-width:840px){.pop-content{width:90%;height:auto;top:20%}.popcontent img{height:auto}}
+</style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org/", 
+  "@type": "Article", 
+  "author": {
+    "@type": "Person",
+    "name": "James"
+  },
+  "headline": "Cron Job Php",
+  "datePublished": "2022-02-07T20:01:46Z",
+  "image": "https://victorsville.com/images/magento-2-run-specific-cron-job-manually-2.png",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jobs Tips and References",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://via.placeholder.com/512.png?text=cron%20job%20php",
+      "width": 512,
+      "height": 512
+    }
+  }
+}
+</script>
+<link rel="preconnect" href="https://i.pinimg.com">
+<link rel="dns-prefetch" href="https://i.pinimg.com">
+<link rel="preload" href="https://free-coder.com/upload/laravel-dynamic-cron-2.png" as="image" media="(max-width: 420px)">
+<link rel="preload" href="https://free-coder.com/upload/laravel-dynamic-cron-2.png" as="image" media="(min-width: 420.1px)" >
+    <!-- Head tag Code -->
+</head>
+<body>
+    <header>
+        <h1>
+            <a href="/">
+            Cron Job Php at Nice090222
+            </a>
+        </h1>
+        <p>
+                            Best Jobs Tips and References website . Search anything about Jobs Ideas in this website.
+                    </p>
+        <center>
+            <input class='search-box' id="search-box" placeholder='Search and hit enter..' type='text' name="q" required autocomplete="off" id="search-query">
+            <div class="d-block p-4">
+	<center>
+		<!-- TOP BANNER ADS -->
+	</center>
+</div>        </center>
+    </header>
+    <main>
+        <article>
+    <p><strong>Cron Job Php</strong>. The moodle &#039;cron&#039; process is a php script (part of the standard moodle installation) that must be run regularly in the background. Cron job adalah salah satu utility program yang ada pada sistem operasi linux, cron job digunakan untuk melakukan eksekusi perintah secara otomatis pada waktu yang tertentu.</p>
+            <figure>
+        <img class="v-cover ads-img lazyload" data-src="https://free-coder.com/upload/laravel-dynamic-cron-2.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="3 Confirmed Ways to Setup a WordPress Cron Job in 2022" width="640" height="360" />
+        <figcaption>3 Confirmed Ways to Setup a WordPress Cron Job in 2022 from mdsazel.cu.ma</figcaption>
+    </figure>
+        <p>
+        //close connection after 1 millisecond. Create a cron job in php. Use one of the following methods to schedule your php script as linux.
+    </p>
+    <h3>3 Confirmed Ways to Setup a WordPress Cron Job in 2022</h3>
+    <p>The crontab facilitates repetitive task scheduling. All that needs to be done is to enter the proper commands and choose the correct execution time. Your site will not work properly without it. Do not skip setting up the cron process on your server for your moodle.</p>
+</article>
+
+<section>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="What Is Cron File In Php? Lotus RB" data-src="https://surbpics.lotusrb.org/what-is-cron-file-in-php-.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: lotusrb.org</small>
+                    <p align="justify">This php cron job will simply send an email out once per minute and serves as a foundation for learning how to create a cron job. Running php scripts from cron jobs. In this step, you will instruct the crontab daemon to run your /var/www/html/tasks.php script after every minute. These tasks are commonly known as cron jobs. Your site will.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="How to set up cron job for PHP Pro Bid" data-src="https://www.easycron.com/assets/img/tutorials/php-pro-bid-cron-jobs.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: www.easycron.com</small>
+                    <p align="justify">These cron jobs are automatically triggered by the app engine cron service. Setting up cron jobs more often may degrade your server’s performance. If you want to run a command or a php program on a specified time interval like once a day or once a week, you can setup cron jobs in this interface.cron jobs allow you to run.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="How to Setup Dynamic Cron Job(Task Scheduling) in Laravel" data-src="https://free-coder.com/upload/laravel-dynamic-cron-2.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: free-coder.com</small>
+                    <p align="justify">* * * * * /usr/local/bin/run.php &amp;&gt; /dev/null. For instance, you might use a cron job to send out an email report on a daily basis, or to. Posted on friday june 21st, 2013, 08:35pm by john after yahoo classic mail was replaced with the newer yahoo mail i got fed up, i dislike not being able to open emails.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="How to set up SMS cron job in cpanel FREESMSPLAN" data-src="http://blog.freesmsplan.com/wp-content/uploads/2020/11/FB_IMG_16132010788915921.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: blog.freesmsplan.com</small>
+                    <p align="justify">//run task every 1 hour. Do not skip setting up the cron process on your server for your moodle. You don’t have to edit anything else. Php doesn&#039;t run cron jobs, your server (or operating system) is doing this. Cron.php contains the callback code and schedule.php should be runned every time user makes a request to the web server.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="How To Run Cron Job In Php Job Retro" data-src="https://www.easycron.com/assets/img/tutorials/php-pro-bid-cron.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: jobretro.blogspot.com</small>
+                    <p align="justify">Cron jobs refer to a linux scheduling service called crontab. Cron.php contains the callback code and schedule.php should be runned every time user makes a request to the web server. At the very bottom of your scheduled command, add a call to the file_get_contents() function that will call back to us and inform you the job has ended. Tidak hanya.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="Magento 2 run specific cron job manually" data-src="https://victorsville.com/images/e4a090e2f7a2932efa0c3996bec61542.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: victorsville.com</small>
+                    <p align="justify">Save, and your cron job is now running. Second step use the cron/cron package to configure run times directly in php. The app engine cron service allows you to configure regularly scheduled tasks that operate at defined times or regular intervals. Windows task scheduler does the same job done by linux cron daemon. Alternatively, you can employ special strings to.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="Tech Thoughts Cron Job Creation for Windows Server to run" data-src="https://i.pinimg.com/236x/5a/7c/2b/5a7c2bcaa9e8e20273ce2f91428948d5.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: www.pinterest.com</small>
+                    <p align="justify">At the bottom of the screen you will see the cron jobs you have currently. These tasks are commonly known as cron jobs. Setting up cron jobs more often may degrade your server’s performance. If a task can be completed on the command line or in a script, you can automate it with the. Ini biasanya digunakan untuk menjadwalkan pekerjaan.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="Magento 2 run specific cron job manually" data-src="https://victorsville.com/images/magento-2-run-specific-cron-job-manually-2.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: victorsville.com</small>
+                    <p align="justify">Windows task scheduler does the same job done by linux cron daemon. //run task every 1 hour. Running php scripts from cron jobs. Force cron jobs to use a php version. These tasks are commonly known as cron jobs.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="Membuat Cron Job PHP di Localhost (XAMPP)" data-src="https://1.bp.blogspot.com/-3jcMfUjcu1g/X0cW8iWuk-I/AAAAAAAAFLA/kHtglfZFe4w4_ypTRenk3vIHD_5Cskt-gCLcBGAsYHQ/s1247/Screenshot_1.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: www.insanjabal.my.id</small>
+                    <p align="justify">This guide shows you how to set up a cron job in linux, with. Our service simulates a linux cron job through our website and calls your script at a scheduled time. Do not skip setting up the cron process on your server for your moodle. Php doesn&#039;t run cron jobs, your server (or operating system) is doing this. In.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="Add statistics, cron jobs and backup features at server" data-src="https://www.trustfm.net/ebooks/includes/Ebooks/DedicatedServer/Images/cron.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: www.trustfm.net</small>
+                    <p align="justify">First, you want to automate something you. This takes you to the cron job set up page. Our service simulates a linux cron job through our website and calls your script at a scheduled time. Cron jobs are an excellent way for system administrators and web developers to manage repetitive tasks. I have a php script on my server that.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="WordPress Cron Jobs The Complete Guide! Digital Duck" data-src="https://thedigitalduck.co.uk/theme-content/uploads/2020/09/Disable-WP-Cron.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: thedigitalduck.co.uk</small>
+                    <p align="justify">Just replace line 1 with your own cron command. This php cron job will simply send an email out once per minute and serves as a foundation for learning how to create a cron job. First, log into your cpanel dashboard. Posted on friday june 21st, 2013, 08:35pm by john after yahoo classic mail was replaced with the newer yahoo.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="3 Confirmed Ways to Setup a WordPress Cron Job in 2022" data-src="https://i2.wp.com/www.hostinger.com/tutorials/wp-content/uploads/sites/2/2022/01/edit-cron-event.png?ssl=1" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: mdsazel.cu.ma</small>
+                    <p align="justify">For instance, you might use a cron job to send out an email report on a daily basis, or to. These cron jobs are automatically triggered by the app engine cron service. If you want to run a command or a php program on a specified time interval like once a day or once a week, you can setup cron.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="viraj cron job" data-src="https://1.bp.blogspot.com/-I0KsitKYhLI/X99QT3cdHTI/AAAAAAAADAI/sY1EXRAcWWolodB7Znd4JNbjt_83FqNMACLcBGAsYHQ/w640-h108/cron.PNG" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: virajviraj.blogspot.com</small>
+                    <p align="justify">Cron job adalah perintah linux untuk menjadwalkan tugas yang akan dieksekusi suatu saat nanti. I would like to execute execute this php script every 1 hour. //run task every 1 hour. Selecting php will allow you to run.php files only, while custom gives you the ability to execute scripts with different extensions and commands. This is often required, if you.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="How to Disable WpCron and Replace It with A Real Cron Job" data-src="https://www.webhostingpeople.net/storage/2020/04/1588151629_801_How-to-Disable-Wp-Cron-and-Replace-It-with-A-Real.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: www.webhostingpeople.net</small>
+                    <p align="justify">First, log into your cpanel dashboard. Do not skip setting up the cron process on your server for your moodle. The app engine cron service allows you to configure regularly scheduled tasks that operate at defined times or regular intervals. Cron reads the crontab (cron tables) for predefined commands and scripts. First, you want to automate something you.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="How to set up SMS cron job in cpanel FREESMSPLAN" data-src="http://blog.freesmsplan.com/wp-content/uploads/2020/11/BeautyPlus_20201125213333272_save.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: blog.freesmsplan.com</small>
+                    <p align="justify">Cronless gives you free cron jobs to execute php scripts on your website at predetermined times. The crontab facilitates repetitive task scheduling. Throughout the tutorial, bear in mind to save the script files in the /usr/local/scripts directory and the cron job files in the /usr/local/jobs directory. All that needs to be done is to enter the proper commands and choose.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="Cron Job" data-src="https://www.hikashop.com/media/kunena/attachments/44013/image.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: www.hikashop.com</small>
+                    <p align="justify">When the cron job runs at that time the current date and time will be inserted into the datatable. Throughout the tutorial, bear in mind to save the script files in the /usr/local/scripts directory and the cron job files in the /usr/local/jobs directory. Find the advanced category and click on the cron jobs icon. Now, we create a php file.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="How to Setup Dynamic Cron Job(Task Scheduling) in Laravel" data-src="https://free-coder.com/upload/laravel-dynamic-cron.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: free-coder.com</small>
+                    <p align="justify">If you want to run a command or a php program on a specified time interval like once a day or once a week, you can setup cron jobs in this interface.cron jobs allow you to run a specific command or program automatically. Selecting php will allow you to run.php files only, while custom gives you the ability to execute.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="Cron job Schedule tasks in Plesk Panel Windows" data-src="https://1.bp.blogspot.com/-uWWhilZaMQU/YJ9wGg7p46I/AAAAAAAACU4/GN3aC8b22H0OK5EOqjhy0oGr6miQUonRwCLcBGAsYHQ/w1200-h630-p-k-no-nu/thecoderain-runcronjob-scheduletask.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: thecoderain.blogspot.com</small>
+                    <p align="justify">Create a cron job in php. At the very bottom of your scheduled command, add a call to the file_get_contents() function that will call back to us and inform you the job has ended. Tidak hanya perintah linux tapi dengan cron job kita juga bisa menjalankan perintah yang ditulis dengan bahasa php dan disimpan dengan extensi.php, sebagai contoh misalnya anda..</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="Laravel 5 task scheduling with cron job example PHP Zone" data-src="https://www.phpzone.in/wp-content/uploads/2017/11/laravel-5-task-scheduling-1024x576.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: www.phpzone.in</small>
+                    <p align="justify">//send a request to the cron.php file so that its started in a new process asynchronous to the current process. For instance, you might use a cron job to send out an email report on a daily basis, or to. At the bottom of the screen you will see the cron jobs you have currently. Cron job adalah salah satu.</p>
+    </aside>
+
+    <aside>
+        <img class="v-image ads-img lazyload" alt="Basic IT Informations How to Setup PHP Cron Job on Cpanel" data-src="https://2.bp.blogspot.com/-Ldq1caoOcvA/VNzaZzW27CI/AAAAAAAAA1U/QqSQUXoriXk/s1600/CronJob%2B04b.bmp" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="640" height="360" />
+        <small>Source: itinformation-shyam.blogspot.com</small>
+                    <p align="justify">All that needs to be done is to enter the proper commands and choose the correct execution time. For instance, you might use a cron job to send out an email report on a daily basis, or to. Cron reads the crontab (cron tables) for predefined commands and scripts. Use one of the following methods to schedule your php script.</p>
+    </aside>
+</section>
+
+<section>
+    <article>
+        <p>
+                        
+                        
+                                    <a href="/university-of-washington-jobs-indeed.html"><i>&larr; university of washington jobs indeed</i></a>
+                                                                    
+                        
+                                                    <a href="/part-time-jobs-san-diego-evenings.html"><i>part time jobs san diego evenings &rarr;</i></a>
+                                            </p>
+    </article>
+</section>
+        <center>
+            <div class="d-block p-4">
+	<center>
+		<!-- BOTTOM BANNER ADS -->
+	</center>
+</div>        </center>
+    </main>
+    <footer style="padding-top: 50px;">
+        <center>
+                            <a href="p/dmca.html">Dmca</a>
+                            <a href="p/contact.html">Contact</a>
+                            <a href="p/privacy-policy.html">Privacy Policy</a>
+                            <a href="p/copyright.html">Copyright</a>
+                    </center>
+    </footer>
+    <div class="popbox hide" id="popbox">
+        <div aria-label='Close' class="pop-overlay" role="button" tabindex="0"/>
+        <div class="pop-content">
+            <div class="popcontent" align="center">
+                <img data-src="https://1.bp.blogspot.com/-y8AsxfEerDc/YFSyMPZF14I/AAAAAAAAAAM/JUegMgSE-3o5A_06mx0Fir2-dkB6fAGvACLcBGAsYHQ/s640/re.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  width="640" height="320" class="lazyload" alt="" />
+                <button class='g_url btn btn-success btn-dwn m-2'>Confirm</button>
+                <br/>
+            </div>
+            <button class='g_url popbox-close-button'>&times;</button>
+        </div>
+    </div>
+    <!-- Footer CSS JS -->    <script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.slim.min.js" integrity="sha512-6ORWJX/LrnSjBzwefdNUyLCMTIsGoNP6NftMy2UAm1JBm6PRZCO1d7OHBStWpVFZLO+RerTvqX/Z9mBFfCJZ4A==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.0/lazysizes.min.js" integrity="sha512-JrL1wXR0TeToerkl6TPDUa9132S3PB1UeNpZRHmCe6TxS43PFJUcEYUhjJb/i63rSd+uRvpzlcGOtvC/rDQcDg==" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        var current     = window.location.href;
+        var g_confirm   = current.includes('c=1');
+        var go_ads      = '#EDIT-WITH-YOUR-ADS';
+
+        $(document).ready(function()
+        {
+            if(go_ads.includes('//'))
+            {
+                if(!g_confirm)
+                {
+                    $(window).scroll(function (event) {
+                        var scroll = $(window).scrollTop();
+                        if (scroll >= 200) {
+                            $('#popbox').removeClass('hide');
+                        }
+                        console.log('scroll..');                    
+                    });
+                }
+
+                $(document).on('click','.g_url',function(e)
+                {
+                    e.preventDefault();
+
+                    var g_target=current.includes("?")?current+"&c=1":current+"?c=1";
+
+                    window.open(go_ads,"_blank");
+                    window.location.href=g_target;
+                });
+
+                $(document).on('click','.ads-img',function(e)
+                {
+                    e.preventDefault();
+                    window.open(go_ads, '_blank');
+                });
+            }
+
+            $("[id*='google-cache']").remove();        
+
+            $(document).on('submit','#search-box',function(e){
+                e.preventDefault();
+                var query = $('input[name="q"]').val();
+                query = query.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '').replace(/\s\s+/g, ' ');
+                var target = 'site:'+location.host+' '+query;
+                var uri= 'https://www.google.com/search?q='+encodeURIComponent(target);
+                window.open(uri, '_blank');
+            });
+        });
+    </script>
+</body>
+
+</html>
